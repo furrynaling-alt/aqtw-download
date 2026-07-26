@@ -2,225 +2,31 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>星耀电竞</title>
-<meta name="description" content="星耀电竞暗区突围项目官方下载站 — 游戏电竞行业连接打手与老板的专业服务平台。洛阳市永恒网络娱乐出品。">
-<link rel="icon" href="a.png" type="image/png">
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script src="i18n.js"></script>
+<title></title>
+<style>
+*{margin:0;padding:0}
+/* 全屏最高层级纯白遮罩，无动画瞬间渲染 */
+#mask{
+    position:fixed;
+    inset:0;
+    background:#fff;
+    z-index:9999999;
+}
+</style>
 </head>
 <body>
-
-<!-- ============ NAV ============ -->
-<nav class="nav">
-    <div class="container nav__inner">
-        <a href="index.html" class="nav__brand">
-            <img src="a.png" alt="星耀电竞 Logo" class="nav__logo">
-            <span class="nav__brand-text">
-                <span class="nav__brand-cn" data-i18n="nav.brand_cn">星耀电竞</span>
-                <span class="nav__brand-en" data-i18n="nav.brand_en">XINGYAO ESPORTS</span>
-            </span>
-        </a>
-        <button class="nav__toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false" data-i18n-attr="aria-label:nav.toggle_aria">
-            <span class="nav__toggle-bar"></span>
-            <span class="nav__toggle-bar"></span>
-            <span class="nav__toggle-bar"></span>
-        </button>
-    </div>
-</nav>
-
-<!-- ============ FULL-SCREEN MENU ============ -->
-<div class="menu" id="overlayMenu">
-    <div class="menu__inner">
-        <ul class="menu__list">
-            <li class="menu__item"><a href="index.html" class="menu__link is-active"><span class="menu__num">01</span><span class="menu__label" data-i18n="menu.01">首页</span></a></li>
-            <li class="menu__item"><a href="download.html" class="menu__link"><span class="menu__num">02</span><span class="menu__label" data-i18n="menu.02">下载中心</span></a></li>
-            <li class="menu__item"><a href="about.html" class="menu__link"><span class="menu__num">03</span><span class="menu__label" data-i18n="menu.03">关于我们</span></a></li>
-            <li class="menu__item"><a href="articles.html" class="menu__link"><span class="menu__num">04</span><span class="menu__label" data-i18n="menu.04">公告资讯</span></a></li>
-        </ul>
-        <div class="menu__foot">
-            <span class="menu__note" data-i18n="menu.version">CURRENT VERSION / V26.7.26</span>
-            <a href="download.html" class="menu__cta" data-i18n="menu.download">立即下载</a>
-        </div>
-        <div class="menu__lang">
-            <span class="menu__lang-label" data-i18n="menu.lang_label">LANGUAGE / 语言</span>
-            <div class="menu__lang-list">
-                <button class="menu__lang-btn is-active" data-lang="zh-CN">简</button>
-                <button class="menu__lang-btn" data-lang="zh-TW">繁</button>
-                <button class="menu__lang-btn" data-lang="en">EN</button>
-                <button class="menu__lang-btn" data-lang="ja">JR</button>
-                <button class="menu__lang-btn" data-lang="bo">བོད།</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- ============ HERO ============ -->
-<header class="hero">
-    <div class="hero__bg"></div>
-    <div class="container">
-        <div class="hero__inner">
-            <div class="hero__content">
-                <div class="hero__tag">
-                    <span class="hero__tag-dot"></span>
-                    <span data-i18n="home.tag">暗区突围 · 打手与老板的协作平台</span>
-                </div>
-                <h1 class="hero__title">
-                    <span data-i18n="home.h1_l1">连接打手与老板</span><br>
-                    <span class="hero__title-accent" data-i18n="home.h1_l2">星耀启航</span>
-                </h1>
-                <p class="hero__desc" data-i18n="home.desc">
-                    星耀电竞暗区突围项目，由洛阳市永恒网络娱乐运营，是游戏电竞行业专注连接「打手」与「老板」的专业服务平台。为执行任务的打手提供趁手工具，为发布需求的老板提供透明管理，让每一次代打协作都高效、可追溯。
-                </p>
-                <div class="hero__actions">
-                    <a href="download.html" class="btn btn--primary">
-                        <svg class="ico" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
-                        <span data-i18n="home.btn_download">立即下载</span>
-                    </a>
-                    <a href="about.html" class="btn btn--ghost" data-i18n="home.btn_about">了解平台</a>
-                </div>
-                <div class="hero__stats">
-                    <div class="hero__stat">
-                        <div class="hero__stat-num">V26.7.26</div>
-                        <div class="hero__stat-label" data-i18n="home.stat_ver">当前版本</div>
-                    </div>
-                    <div class="hero__stat">
-                        <div class="hero__stat-num">24H</div>
-                        <div class="hero__stat-label" data-i18n="home.stat_support">在线支持</div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero__visual">
-                <div class="hero__emblem">
-                    <span class="hero__corner hero__corner--tl"></span>
-                    <span class="hero__corner hero__corner--tr"></span>
-                    <span class="hero__corner hero__corner--bl"></span>
-                    <span class="hero__corner hero__corner--br"></span>
-                    <div class="hero__emblem-ring"></div>
-                    <div class="hero__emblem-ring hero__emblem-ring--inner"></div>
-                    <div class="hero__logo-wrap">
-                        <img src="a.png" alt="星耀电竞" class="hero__logo">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- ============ PLATFORM INTRO ============ -->
-<section class="section">
-    <div class="container">
-        <div class="section__head reveal">
-            <div class="section__eyebrow" data-i18n="home.intro_eyebrow">PLATFORM / 平台简介</div>
-            <h2 class="section__title" data-i18n="home.intro_title">打手与老板的电竞协作平台</h2>
-            <p class="section__subtitle" data-i18n="home.intro_sub">
-                星耀电竞暗区突围项目是游戏电竞行业的专业代打协作平台。老板在这里发布代打需求与目标，打手在这里接单执行、回报进度，平台全程保障流程透明、资金安全与结果可追溯。
-            </p>
-        </div>
-        <div class="features reveal">
-            <div class="feature">
-                <div class="feature__num" data-i18n="home.f1_num">01 / 需求对接</div>
-                <h3 class="feature__title" data-i18n="home.f1_title">老板发单</h3>
-                <p class="feature__desc" data-i18n="home.f1_desc">老板一键发布代打需求：指定段位、目标、预算与时效，平台智能匹配最合适的打手接单。</p>
-            </div>
-            <div class="feature">
-                <div class="feature__num" data-i18n="home.f2_num">02 / 专业执行</div>
-                <h3 class="feature__title" data-i18n="home.f2_title">打手接单</h3>
-                <p class="feature__desc" data-i18n="home.f2_desc">打手端实时推送适配订单，一键接单后即可开始执行，全程记录战绩与进度，每一步都可回溯。</p>
-            </div>
-            <div class="feature">
-                <div class="feature__num" data-i18n="home.f3_num">03 / 结果验收</div>
-                <h3 class="feature__title" data-i18n="home.f3_title">验收留档</h3>
-                <p class="feature__desc" data-i18n="home.f3_desc">任务完成后老板在线验收，自动留档，历史订单随时可查，保障双方权益。</p>
-            </div>
-            <div class="feature">
-                <div class="feature__num" data-i18n="home.f4_num">04 / 资金安全</div>
-                <h3 class="feature__title" data-i18n="home.f4_title">担保结算</h3>
-                <p class="feature__desc" data-i18n="home.f4_desc">平台担保交易，资金验收通过后自动结算给打手，杜绝跑单与纠纷，让双方都安心。</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============ CTA ============ -->
-<section class="cta-banner">
-    <div class="container">
-        <h2 class="cta-banner__title" data-i18n="home.cta_title">准备接入？立即获取客户端</h2>
-        <p class="cta-banner__desc" data-i18n="home.cta_desc">星耀电竞与星耀易手通均已更新至 V26.7.26，覆盖六大平台。下载安装即可接入星耀电竞协作体系。</p>
-        <a href="download.html" class="btn btn--primary" data-i18n="home.cta_btn">前往下载中心</a>
-    </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer__top">
-            <div class="footer__brand">
-                <img src="a.png" alt="星耀电竞" class="footer__brand-logo">
-                <p class="footer__brand-desc" data-i18n="footer.desc">洛阳市永恒网络娱乐旗下星耀电竞品牌，游戏电竞行业连接打手与老板的专业服务平台。</p>
-            </div>
-            <div class="footer__col">
-                <div class="footer__col-title" data-i18n="footer.nav">导航</div>
-                <a href="index.html" class="footer__link" data-i18n="footer.f_home">首页</a>
-                <a href="download.html" class="footer__link" data-i18n="footer.f_download">下载中心</a>
-                <a href="about.html" class="footer__link" data-i18n="footer.f_about">关于我们</a>
-                <a href="articles.html" class="footer__link" data-i18n="footer.f_news">公告资讯</a>
-            </div>
-            <div class="footer__col">
-                <div class="footer__col-title" data-i18n="footer.dl">下载</div>
-                <a href="download.html" class="footer__link" data-i18n="footer.f_xy">星耀电竞</a>
-                <a href="download.html" class="footer__link" data-i18n="footer.f_yst">星耀易手通</a>
-            </div>
-            <div class="footer__col">
-                <div class="footer__col-title" data-i18n="footer.contact">联系</div>
-                <a href="mailto:yit08102022@163.com" class="footer__link"><span>yit08102022@163.com</span><span data-i18n="footer.chairman">（董事长）</span></a>
-                <a href="mailto:furrynaling@outlook.com" class="footer__link"><span>furrynaling@outlook.com</span><span data-i18n="footer.service">（客服）</span></a>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <span data-i18n="footer.copy">© 2026 洛阳市永恒网络娱乐 · 星耀电竞 — 暗区突围项目</span>
-            <span data-i18n="footer.brand_line">XINGYAO ESPORTS / AQTW PROJECT</span>
-        </div>
-    </div>
-</footer>
-
+<div id="mask"></div>
 <script>
-// Hamburger menu toggle
-(function(){
-    var toggle = document.getElementById('navToggle');
-    var menu = document.getElementById('overlayMenu');
-    if(!toggle || !menu) return;
-    function closeMenu(){
-        toggle.classList.remove('is-active');
-        menu.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded','false');
-        document.body.style.overflow = '';
-    }
-    function openMenu(){
-        toggle.classList.add('is-active');
-        menu.classList.add('is-open');
-        toggle.setAttribute('aria-expanded','true');
-        document.body.style.overflow = 'hidden';
-    }
-    toggle.addEventListener('click', function(){
-        if(menu.classList.contains('is-open')){ closeMenu(); } else { openMenu(); }
-    });
-    // Close on link click
-    menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
-    // Close on Escape
-    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
-
-    // Reveal on scroll
-    var els = document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('is-visible'); }); return; }
-    var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('is-visible'); io.unobserve(en.target); } });
-    }, { threshold: 0.12 });
-    els.forEach(function(e){ io.observe(e); });
-})();
+// 页面加载完成立刻执行
+window.addEventListener('DOMContentLoaded',()=>{
+    // 遮罩同步显示，无延迟
+    const mask = document.getElementById('mask');
+    mask.style.display = 'block';
+    // 10毫秒跳转，毫秒级切换
+    setTimeout(()=>{
+        location.replace('./0/index.html');
+    },10)
+})
 </script>
 </body>
 </html>
