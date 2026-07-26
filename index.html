@@ -1,1 +1,32 @@
-Hello World
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+*{margin:0;padding:0}
+/* 全屏最高层级纯白遮罩，无动画瞬间渲染 */
+#mask{
+    position:fixed;
+    inset:0;
+    background:#fff;
+    z-index:9999999;
+}
+</style>
+</head>
+<body>
+<div id="mask"></div>
+<script>
+// 页面加载完成立刻执行
+window.addEventListener('DOMContentLoaded',()=>{
+    // 遮罩同步显示，无延迟
+    const mask = document.getElementById('mask');
+    mask.style.display = 'block';
+    // 10毫秒跳转，毫秒级切换
+    setTimeout(()=>{
+        location.replace('./0/index.html');
+    },10)
+})
+</script>
+</body>
+</html>
