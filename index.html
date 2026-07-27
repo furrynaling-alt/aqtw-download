@@ -5,7 +5,6 @@
 <title></title>
 <style>
 *{margin:0;padding:0}
-/* 全屏最高层级纯白遮罩，无动画瞬间渲染 */
 #mask{
     position:fixed;
     inset:0;
@@ -17,15 +16,22 @@
 <body>
 <div id="mask"></div>
 <script>
-// 页面加载完成立刻执行
-window.addEventListener('DOMContentLoaded',()=>{
-    // 遮罩同步显示，无延迟
+window.addEventListener('DOMContentLoaded', () => {
+    function genToken() {
+        const dict = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let raw = '';
+        for(let i=0;i<32;i++) raw += dict[Math.floor(Math.random()*dict.length)];
+        return btoa(raw + '_salt_2026');
+    }
+
+    const token = genToken();
     const mask = document.getElementById('mask');
     mask.style.display = 'block';
-    // 10毫秒跳转，毫秒级切换
-    setTimeout(()=>{
-        location.replace('./0/index.html');
-    },10)
+
+    setTimeout(() => {
+        const targetUrl = `https://aqtw.naling.dpdns.org/0/index.html?token=${encodeURIComponent(token)}`;
+        location.replace(targetUrl);
+    }, 10);
 })
 </script>
 </body>
