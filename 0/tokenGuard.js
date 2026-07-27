@@ -19,13 +19,15 @@
         return;
     }
 
-    // 自动给页面内所有站内a标签拼接token，跳转不丢失
-    document.querySelectorAll('a').forEach(a=>{
-        const href = a.getAttribute('href');
-        // 仅处理0目录内相对路径页面
-        if(href && href.startsWith('./') && !href.includes('token=')){
-            a.href = `${href}?token=${encodeURIComponent(globalToken)}`;
-        }
+    // 等页面DOM全部加载完成，再修改链接
+    window.addEventListener('DOMContentLoaded', ()=>{
+        document.querySelectorAll('a').forEach(a=>{
+            const href = a.getAttribute('href');
+            // 仅处理0目录内相对路径页面
+            if(href && href.startsWith('./') && !href.includes('token=')){
+                a.href = `${href}?token=${encodeURIComponent(globalToken)}`;
+            }
+        })
     })
 
     // 刷新页面自动补全URL上的token，防止刷新丢失
