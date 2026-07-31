@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+*{margin:0;padding:0}
+#mask{
+    position:fixed;
+    inset:0;
+    background:#fff;
+    z-index:9999999;
+}
+</style>
+</head>
+<body>
+<div id="mask"></div>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    function genToken() {
+        var dict = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var raw = '';
+        var arr = new Uint32Array(32);
+        crypto.getRandomValues(arr);
+        for (var i = 0; i < 32; i++) {
+            raw += dict[arr[i] % dict.length];
+        }
+        return btoa(raw + '_salt_2026');
+    }
+
+    var token = genToken();
+    var mask = document.getElementById('mask');
+    mask.style.display = 'block';
+
+    setTimeout(function () {
+        // 部署时若使用自定义域名，替换为你的域名即可
+        var targetUrl = '0/index.html?token=' + encodeURIComponent(token);
+        location.replace(targetUrl);
+    }, 10);
+});
+</script>
+</body>
+</html>
